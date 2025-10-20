@@ -9,6 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="keynote-service" />
         <module name="conference-service" />
+        <module name="config-service" />
+        <module name="eureka-server" />
+        <module name="gateway-service" />
       </profile>
     </annotationProcessing>
   </component>
