@@ -7,8 +7,7 @@ package com.ms.conferenceservice.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
-import java.util.List;
+import java.time.Instant;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,12 +18,15 @@ public class Conference {
     @Id @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String title;
-    private Date date;
+    private Instant date;
     private double duration;
     private double score;
     private int inscriptions;
 
-    @OneToMany(mappedBy = "conference", cascade = CascadeType.ALL)
-    private List<Review> reviews;
+    private Long keynoteId;
+
+
+//    @OneToMany(mappedBy = "conference", cascade = CascadeType.ALL)
+//    private List<Review> reviews;
 
 }

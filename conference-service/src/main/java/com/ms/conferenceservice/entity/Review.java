@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.Instant;
 
 @Getter
 @Setter
@@ -16,7 +16,7 @@ import java.util.Date;
 public class Review {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date date;
+    private Instant date;
     private String texte;
     private int note;
 
