@@ -14,8 +14,8 @@ import lombok.*;
 @Setter
 @Entity
 public class Keynote {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String firstName;
     private String LastName;
     private String email;
