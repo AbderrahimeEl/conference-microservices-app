@@ -1,0 +1,45 @@
+<!-- src/app/pages/conference/conference-list.component/conference-list.component.html -->
+<div class="container">
+  <h2>Conferences List</h2>
+@if (loading()) {
+  <div class="text-center mt-4">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  }
+@if(!loading()){
+  <table  class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Duration</th>
+        <th>Score</th>
+        <th>Inscriptions</th>
+        <th>Keynote</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    @for (conf of conferences; track conf) {
+      <tr>
+        <td>{{ conf.id }}</td>
+        <td>{{ conf.title }}</td>
+        <td>{{ conf.date }}</td>
+        <td>{{ conf.duration }} hrs</td>
+        <td>{{ conf.score }}</td>
+        <td>{{ conf.inscriptions }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm me-2" routerLink="keynotes/{{conf.keynoteId}}" >View</button>
+        </td>
+        <td>
+          <button class="btn btn-warning btn-sm">Edit</button>
+        </td>
+      </tr>
+    }
+    </tbody>
+  </table>
+}
+</div>

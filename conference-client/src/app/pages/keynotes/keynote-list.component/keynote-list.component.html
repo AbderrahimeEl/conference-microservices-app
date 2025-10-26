@@ -1,0 +1,42 @@
+<!-- src/app/pages/conference/conference-list.component/conference-list.component.html -->
+<div class="container">
+  <h2>Keynotes List</h2>
+@if (loading()) {
+  <div class="text-center mt-4">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  }
+@if(!loading()){
+  <table  class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>email</th>
+        <th>function</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    @for (keynote of keynotes; track keynote) {
+      <tr>
+        <td>{{ keynote.id }}</td>
+        <td>{{ keynote.firstName }}</td>
+        <td>{{ keynote.lastName }}</td>
+        <td>{{ keynote.email }}</td>
+        <td>{{ keynote.function }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm me-2">Delete</button>
+        </td>
+        <td>
+          <button class="btn btn-warning btn-sm">Edit</button>
+        </td>
+      </tr>
+    }
+    </tbody>
+  </table>
+}
+</div>
